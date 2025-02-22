@@ -12,6 +12,26 @@ Ensure the following tools are installed:
 - **Docker** – Used to build and manage the vulnerable test environment.
 - **Make** – Simplifies command execution.
 
+
+## Project structure
+
+```
+.
+├── Makefile
+├── nse-custom-script
+│   ├── debug-script.nse
+│   └── sec-headers-check.nse
+├── README.md
+└── vulnerable-environment
+    ├── docker-compose.yml
+    ├── Dockerfile
+    ├── Makefile
+    └── nginx.conf
+
+3 directories, 8 files
+
+```
+
 ---
 ## Custom Metrics for Vulnerability Ranking
 The vulnerabilities are categorized based on:
