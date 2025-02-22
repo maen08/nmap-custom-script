@@ -151,7 +151,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds
 docker run --name nginx-app -d -p 8085:80 nginx
 
 # scan the secured app
-nmap --script ./sec-headers-check.nse  -p 8085 192.168.1.137
+nmap --script ./sec-headers-check.nse  -p 8085 localhost
 
 ```
 
