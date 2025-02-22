@@ -1,24 +1,25 @@
 # nmap-custom-script
-- NMAP custom script that prioritize the detected vulnerabilities based on defined metrics
+- NMAP custom script that scan for vulnerabilities and order them based on custome metrics
 - For this case, our script will be scanning HTTP headers vulnerabilities (secure headers)
 - We'll setup vulnerable webapp (Nginx) for demo in order to get the scanning results
 
 
-## Prerequisite
-- NMAP
-- Docker
-- Linux / Windows machine
+## Prerequisite tools 
+- nmap - for running our custom nse script
+- Docker - for building our vulnerable environment
+- make - for running commands easily
 
   
-## Custom metrics
+## Custom metrics (choosen)
 - Severity
 - CVSS score
-- Exploitability
+- Impact
 
 
 ## Use Case
+- Our target in this case is a web application which is represented by Nginx (for demo purpose)
 - Scanning vulnerabilities in Nginx and output the findings based on severity, CVSS score and impact
-- The following are sample isues to be checked:
+- Examples of real HTTP security vulnerabilities are:
 
 ```
 
@@ -80,61 +81,31 @@
 ```
 
 ## Installation
-- Installing on Linux debian-based machine where `nmap` was installed through `snap`
+- Get the script ready to work
 
 ```
 # make it executable
 chmod +x sec-headers-check.nse
 
-# move the script into nmap script folder
-mv sec-headers-check.nse ~/snap/nmap/current/usr/share/nmap/scripts/
-
-# update the scripts folder
-nmap --script-updatedb
-nmap --script-updatedb --datadir ~/snap/nmap/current/usr/share/nmap/
-
-# script is ready for use
-nmap --script sec-headers-check -p 80 <your-nginx-ip>
-
-# alternatively
+# run it
 nmap --script /path/to/sec-headers-check.nse -p 80 <your-nginx-ip>
 
 ```
 
-- Installing on Linux debian-based machine where `nmap` was installed through `apt`
-
-```
-
-```
-
-- Installing on Mac machine where `nmap` was installed through `brew`
-
-```
-
-```
-
-
-## How it works
-- Once you run the script agains the target, first it will scan for a number of vulnerabilities (listed) and then it will give the output listed based on priority
-
-```
-# Run the script command
-
-
-# Example of output results
-
-```
-
-## Testing
+## How it works / Testing
 1. Vulnerable environment 
 
 - Setup a vulnerable environment with docker so that we can scan for vulnerabilities
 ```
 # Setup environment command
+cd vulnerable-environment
+
+make up
 
 ```
 
-- Get the IP address of the vulnerable environment/machine
+- Verify nginx is working fine by navigate to `http://localhost:8000`
+
 ```
 # Command
 docker inspect name-here | grep IPAddrr
@@ -203,6 +174,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds
 using the script if you'll get the results (you wont catch those issues)
 
 ## Debugging
+- Run the script by checking the trace by adding the flag `--script-trace` in the end of your command.
 - Running the script `debug-script.nse` on the target. You should get the output like this:
 
 ```
