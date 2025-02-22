@@ -176,6 +176,9 @@ For troubleshooting, use these commands:
    ```
 
 ---
+
+##### Public Gist: `https://gist.github.com/maen08/e592d65cdde99987a388e29d49dd1a8a`
+
 ## Conclusion
 This guide outlines how to identify HTTP security vulnerabilities using a custom NMAP script. By setting up both vulnerable and secure environments, users can validate security controls and improve their web application's defense mechanisms.
 
