@@ -1,5 +1,6 @@
 # nmap-custom-script
-NMAP custom script that prioritize the detected vulnerabilities based on defined metrics
+- NMAP custom script that prioritize the detected vulnerabilities based on defined metrics
+- For this case, our script will be scanning HTTP headers vulnerabilities (secure headers)
 
 
 ## Prerequisite
@@ -10,19 +11,9 @@ NMAP custom script that prioritize the detected vulnerabilities based on defined
   
 ## Custom metrics
 - Severity
-- Exploitability
 - CVSS score
+- Exploitability
 
-## How it works
-- Once you run the script agains the target, first it will scan for a number of vulnerabilities (listed) and then it will give the output listed based on priority
-
-```
-# Run the script command
-
-
-# Example of output results
-
-```
 
 ## Use Case
 - Scanning vulnerabilities in Nginx and output the findings based on severity, CVSS score and impact
@@ -87,6 +78,36 @@ NMAP custom script that prioritize the detected vulnerabilities based on defined
 
 ```
 
+## Installation
+- Installing on Linux debian-based machine where `nmap` was installed through `snap`
+
+```
+
+```
+
+- Installing on Linux debian-based machine where `nmap` was installed through `apt`
+
+```
+
+```
+
+- Installing on Mac machine where `nmap` was installed through `brew`
+
+```
+
+```
+
+
+## How it works
+- Once you run the script agains the target, first it will scan for a number of vulnerabilities (listed) and then it will give the output listed based on priority
+
+```
+# Run the script command
+
+
+# Example of output results
+
+```
 
 ## Testing
 - Setup a vulnerable environment with docker so that we can scan for vulnerabilities
