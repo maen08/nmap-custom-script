@@ -1,4 +1,4 @@
-# NMAP Custom Script for HTTP Header Vulnerability Scanning
+# NMAP Custom Script for HTTP Headers Scanning
 
 ## Introduction
 This guide provides a detailed walkthrough on using a custom NMAP script to scan for HTTP header vulnerabilities. The script ranks detected vulnerabilities based on custom-defined metrics to aid security assessments.
