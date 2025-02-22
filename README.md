@@ -95,28 +95,25 @@ nmap --script /path/to/sec-headers-check.nse -p 80 <your-nginx-ip>
 ```
 
 ## How it works / Testing
-1. Vulnerable environment 
-
+1. On Vulnerable environment 
 - Setup a vulnerable environment with docker so that we can scan for vulnerabilities
+
+
 ```
 # Setup environment command
 cd vulnerable-environment
 
+# run it
 make up
-
 ```
 
 - Verify nginx is working fine by navigate to `http://localhost:8000`
 
-```
-# Command
-docker inspect name-here | grep IPAddrr
-
-```
-
 - Scan
+
 ```
 # Command
+nmap --script ./sec-headers-check.nse  -p 8000 localhost
 
 ```
 
@@ -145,7 +142,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds
 
 
 
-2. Secure environment
+2. On Secure environment
 - Seting up another webapp with secure configurations of `nginx` then we wont get any vulnerability captured since it is secure.
 - To do that just run `nginx` in a docker container without any configuration (by default Nginx have done great on their configurations)
 
