@@ -174,6 +174,7 @@ using the script if you'll get the results (you wont catch those issues)
 
 ## Debugging
 - Run the script by checking the trace by adding the flag `--script-trace` in the end of your command.
+- Run the script by checking the debug logs by adding the flag `-d` in the end of your command.
 - Running the script `debug-script.nse` on the target. You should get the output like this:
 
 ```
