@@ -1,4 +1,4 @@
-# NMAP Custom Script for HTTP Headers Scanning
+# NMAP Custom Script 
 
 ## Introduction
 This guide provides a detailed walkthrough on using a custom NMAP script to scan for HTTP header vulnerabilities. The script ranks detected vulnerabilities based on custom-defined metrics to aid security assessments.
@@ -179,6 +179,4 @@ For troubleshooting, use these commands:
 
 ##### Public Gist: `https://gist.github.com/maen08/e592d65cdde99987a388e29d49dd1a8a`
 
-## Conclusion
-This guide outlines how to identify HTTP security vulnerabilities using a custom NMAP script. By setting up both vulnerable and secure environments, users can validate security controls and improve their web application's defense mechanisms.
 
